@@ -1,0 +1,55 @@
+/**
+ * Cainiao IoT device info
+ */
+entity DeviceInfo {
+	/**
+	* Global unique device ID
+	*/
+	udid String,
+    gmt_create ZonedDateTime,
+    gmt_modified ZonedDateTime,
+    /**
+	* Device english name
+	*/
+	device_id String,
+	device_name String,
+    /**
+	* Device physical model name
+	*/
+	device_model String,
+    /**
+	* MAC address
+	*/
+	mac String,
+    /**
+	* Serail Num
+	*/
+	sn String,
+    fw_ver String,
+    /**
+	* Unique factor,such as 0,1
+	*/
+	factor Integer,
+    product_id String,
+	product_name String,
+    region_id String,
+	region_name String,
+    zone_id String,
+	zone_name String,
+    source String,
+	ver_nb Integer,
+    lat Double,
+	lng Double,
+	info String
+}
+
+
+// Set pagination options
+paginate DeviceInfo with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with cniot
